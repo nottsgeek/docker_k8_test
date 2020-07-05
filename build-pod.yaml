@@ -3,7 +3,7 @@ kind: Pod
 spec:
   containers:  # list of containers that you want present for your build, you can define a default container in the Jenkinsfile
     - name: docker
-      image: alpline:latest
+      image: alpine:latest
       command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always
       volumeMounts:
