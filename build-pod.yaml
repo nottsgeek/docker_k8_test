@@ -6,4 +6,3 @@ spec:
       image: alpine:latest
       command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always,
-      ttyEnabled: true
