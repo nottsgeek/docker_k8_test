@@ -5,4 +5,4 @@ spec:
     - name: docker
       image: alpine:latest
       command: ["tail", "-f", "/dev/null"]
-      imagePullPolicy: Always,
+      imagePullPolicy: Always
