@@ -6,5 +6,7 @@ spec:
   containers:  # list of containers that you want present for your build, you can define a default container in the Jenkinsfile
     - name: docker
       image: alpine:latest
-      command: ["tail", "-f", "/dev/null"]
       imagePullPolicy: Always
+      args:
+      - sleep
+      - "1000"
