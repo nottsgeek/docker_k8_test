@@ -7,5 +7,6 @@ spec:
     - name: docker
       image: alpine:latest
       imagePullPolicy: Always
+      command: ["tail", "-f", "/dev/null"]
       ports:
         - containerPort: 50000
