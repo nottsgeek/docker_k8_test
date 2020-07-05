@@ -8,18 +8,6 @@ spec:
     command:
     - /busybox/cat
     tty: true
-    volumeMounts:
-      - name: jenkins-docker-cfg
-        mountPath: /kaniko/.docker
-  volumes:
-  - name: jenkins-docker-cfg
-    projected:
-      sources:
-      - secret:
-          name: regcred
-          items:
-            - key: .dockerconfigjson
-              path: config.json
 """
   ) {
 
@@ -27,7 +15,7 @@ spec:
     stage('Build with Kaniko') {
       git 'https://github.com/jenkinsci/docker-jnlp-slave.git'
       container('kaniko') {
-        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --insecure --skip-tls-verify --cache=true --destination=mydockerregistry:5000/myorg/myimage'
+        sh 'date'
       }
     }
   }
